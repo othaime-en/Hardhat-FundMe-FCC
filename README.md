@@ -10,17 +10,16 @@ Try running some of the following tasks:
 yarn hardhat accounts
 yarn hardhat compile
 yarn hardhat clean
-yarn hardhat test
 yarn hardhat node
 yarn hardhat help
 REPORT_GAS=true yarn hardhat test
-yarn hardhat coverage
 yarn hardhat run scripts/deploy.js
 node scripts/deploy.js
-yarn prettier '**/*.{json,sol,md}' --check
-yarn prettier '**/*.{json,sol,md}' --write
-yarn solhint 'contracts/**/*.sol'
-yarn solhint 'contracts/**/*.sol' --fix
+yarn coverage
+yarn test
+yarn format
+yarn lint
+yarn lint:fix
 ```
 
 # Etherscan verification
