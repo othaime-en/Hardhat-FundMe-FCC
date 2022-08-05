@@ -12,6 +12,7 @@ yarn hardhat compile
 yarn hardhat clean
 yarn hardhat node
 yarn hardhat help
+yarn hardhat block-number --network rinkeby
 REPORT_GAS=true yarn hardhat test
 yarn hardhat run scripts/deploy.js
 node scripts/deploy.js

@@ -32,7 +32,7 @@ module.exports = {
         },
     },
     gasReporter: {
-        enabled: true,
+        enabled: process.env.REPORT_GAS ? true : false, // change to true or false if you are on windows.
         outputFile: "gas-report.txt",
         coinmarketcap: COINMARKETCAP_API_KEY,
         currency: "USD",

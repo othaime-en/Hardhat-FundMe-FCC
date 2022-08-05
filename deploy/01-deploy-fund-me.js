@@ -37,7 +37,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         from: deployer,
         args: args, // put priceFeedAddress here
         log: true,
-        waitConfirmations: network.config.blockConfirmation || 6,
+        waitConfirmations: network.config.blockConfirmation || 1, // change if you are working with a testnet
     })
     log("********************************************************")
 
