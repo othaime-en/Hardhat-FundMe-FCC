@@ -21,7 +21,7 @@ contract FundMe {
     mapping(address => uint256) private s_addressToAmountFunded; // It is common practice to add a prefix s_ to the variable name to indicate that it is a storage variable
 
     address private immutable i_owner;
-    uint256 public constant MINIMUM_USD = 0.5 * 1e18;
+    uint256 public constant MINIMUM_USD = 5 * 10**18;
 
     AggregatorV3Interface private s_priceFeed;
 
