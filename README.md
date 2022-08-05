@@ -7,22 +7,20 @@ The project comes with a sample contract, a test for that contract, a sample scr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-npx hardhat help
-REPORT_GAS=true npx hardhat test
-npx hardhat coverage
-npx hardhat run scripts/deploy.js
+yarn hardhat accounts
+yarn hardhat compile
+yarn hardhat clean
+yarn hardhat test
+yarn hardhat node
+yarn hardhat help
+REPORT_GAS=true yarn hardhat test
+yarn hardhat coverage
+yarn hardhat run scripts/deploy.js
 node scripts/deploy.js
-npx eslint '**/*.js'
-npx eslint '**/*.js' --fix
-npx prettier '**/*.{json,sol,md}' --check
-npx prettier '**/*.{json,sol,md}' --write
-npx solhint 'contracts/**/*.sol'
-npx solhint 'contracts/**/*.sol' --fix
+yarn prettier '**/*.{json,sol,md}' --check
+yarn prettier '**/*.{json,sol,md}' --write
+yarn solhint 'contracts/**/*.sol'
+yarn solhint 'contracts/**/*.sol' --fix
 ```
 
 # Etherscan verification
