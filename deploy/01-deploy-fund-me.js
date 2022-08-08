@@ -1,13 +1,3 @@
-/*
- * async function deployFunc(hre) {
- *   const { getNamedAccounts, deployments } = hre
- *   same as hre.getNamedAccounts() and hre.deployments
- * }
- * module.exports = deployFunc
- */
-
-// const helperConfig = require("../helper-hardhat-config")
-// const networkConfig = helperConfig.networkConfig
 const { networkConfig, developmentChains } = require("../helper-hardhat-config")
 const { network } = require("hardhat")
 const { verify } = require("../utils/verify")
@@ -21,6 +11,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     // const ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed
     let ethUsdPriceFeedAddress
     if (developmentChains.includes(network.name)) {
+        // getting the most recent deployment of MockV3Aggregator and assigning its address as the ethUsdPriceFeedAddress
         let ethUsdAggregator = await deployments.get("MockV3Aggregator")
         ethUsdPriceFeedAddress = ethUsdAggregator.address
     } else {
