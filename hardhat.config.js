@@ -11,6 +11,7 @@ require("./tasks/tasks")
  */
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
+const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_2
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
@@ -23,7 +24,7 @@ module.exports = {
     networks: {
         rinkeby: {
             url: RINKEBY_RPC_URL || "",
-            accounts: [PRIVATE_KEY],
+            accounts: [PRIVATE_KEY, PRIVATE_KEY_2],
             chainId: 4,
             blockConfirmations: 2,
         },
@@ -43,7 +44,7 @@ module.exports = {
         apiKey: ETHERSCAN_API_KEY,
     },
     namedAccounts: {
-        deployer: { default: 0, 1: 0 },
+        deployer: { default: 0, 4: 1 },
         users: { default: 0 },
     },
 }
