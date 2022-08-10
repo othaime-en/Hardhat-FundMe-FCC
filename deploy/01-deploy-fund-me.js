@@ -30,6 +30,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log: true,
         waitConfirmations: network.config.blockConfirmation || 1, // change if you are working with a testnet
     })
+    log(`FundMe deployed by ${deployer} at ${fundMe.address}`)
     log("********************************************************")
 
     // adding a verification mechanism to verify contracts deployed on rinkeby
