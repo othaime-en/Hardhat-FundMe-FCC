@@ -1,3 +1,9 @@
+/* This is the main script for deploying the FundMe contract.
+ * The Main determinant is ethUsdPriceFeedAddress which is obtained by the if statement
+ * If we are on a development chain, we deploy MockV3Aggregator, get the address and assign it to ethUsdPriceFeedAddress
+ * If we are on a testnet, we get the address of the real AggregatorV3 contract and assign it to ethUsdPriceFeedAddress
+ */
+
 const { networkConfig, developmentChains } = require("../helper-hardhat-config")
 const { network } = require("hardhat")
 const { verify } = require("../utils/verify")
@@ -18,11 +24,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed
     }
 
-    /*
-     * when working with hardhat or localhost, we need to use mocks in place of modulirized contracts
-     * this is because the contracts are not deployed on the blockchain/testnet we are working on
-     * so we need to use a minimal version of it in our local testing. Check out 00-deploy-mocks.js
-     */
     const args = [ethUsdPriceFeedAddress]
     const fundMe = await deploy("FundMe", {
         from: deployer,
