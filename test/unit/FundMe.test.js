@@ -88,7 +88,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
                   )
               })
 
-              it("allows us to withdraw with multiple getFunders", async () => {
+              it("allows us to withdraw with multiple funders", async () => {
                   const accounts = await ethers.getSigners()
                   // simulating multiple funding transactions
                   for (let i = 1; i < 6; i++) {
