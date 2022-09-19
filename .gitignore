@@ -5,6 +5,7 @@ coverage.json
 typechain
 deployments
 yarn-error.log
+gas-report.txt
 
 #Hardhat files
 cache
