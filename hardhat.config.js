@@ -9,7 +9,6 @@ require("./tasks/tasks")
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const PRIVATE_KEY_2 = process.env.PRIVATE_KEY_2
@@ -23,12 +22,6 @@ module.exports = {
     },
     defaultNetwork: "hardhat",
     networks: {
-        rinkeby: {
-            url: RINKEBY_RPC_URL || "",
-            accounts: [PRIVATE_KEY, PRIVATE_KEY_2],
-            chainId: 4,
-            blockConfirmations: 2,
-        },
         goerli: {
             url: GOERLI_RPC_URL || "",
             accounts: [PRIVATE_KEY, `0x${PRIVATE_KEY_2}`],
@@ -51,7 +44,7 @@ module.exports = {
         apiKey: ETHERSCAN_API_KEY,
     },
     namedAccounts: {
-        deployer: { default: 0, 4: 1, 5: 1 },
+        deployer: { default: 0, 5: 1 },
         users: { default: 1 },
     },
 }
