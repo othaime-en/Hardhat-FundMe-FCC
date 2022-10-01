@@ -6,6 +6,7 @@ typechain
 deployments
 yarn-error.log
 gas-report.txt
+*.log
 
 #Hardhat files
 cache
