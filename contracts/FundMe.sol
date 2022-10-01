@@ -86,6 +86,9 @@ contract FundMe {
         require(callSuccess, "Call failed");
     }
 
+    /**
+     * @dev a withdraw function that consumes less gas
+     */
     function cheaperWithdraw() public payable onlyOwner {
         address[] memory funders = s_funders;
         for (
@@ -104,10 +107,8 @@ contract FundMe {
     }
 
     /**
-     * @notice This section refactors the visibility of some of our variables.
      * @notice We have changed the visibility of most of our variables above to private
      * @dev Now we create getter functions so that we can acces them from outside the contract
-     * @dev remember to change the variable names in the FundMe.test.js file and any other files
      */
 
     function getOwner() public view returns (address) {
